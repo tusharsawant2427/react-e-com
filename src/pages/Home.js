@@ -1,11 +1,8 @@
 import React from "react";
-import Header from "./_partials/header";
 import "../css/custom.css";
 
-const Home = ({ userMenuShow, onUserMenuClick }) => {
+const Home = () => {
   return (
-    <>
-      <Header userMenuShow={userMenuShow} onUserMenuClick={onUserMenuClick} />
       <main className="w-full bg-gray-100">
         <header className="px-0" id="home">
           <img
@@ -54,7 +51,7 @@ const Home = ({ userMenuShow, onUserMenuClick }) => {
                   <p className="float-start mt-10">
                     <button
                       type="button"
-                      class="text-black focus:outline-none border border-gray-200 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center"
+                      className="text-black focus:outline-none border border-gray-200 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +73,7 @@ const Home = ({ userMenuShow, onUserMenuClick }) => {
                   <p className="float-end mt-10">
                     <button
                       type="button"
-                      class="text-white focus:outline-none border border-gray-200 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center bg-black"
+                      className="text-white focus:outline-none border border-gray-200 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center bg-black"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -122,83 +119,83 @@ const Home = ({ userMenuShow, onUserMenuClick }) => {
               </div>
             </div>
             <div className="md:w-1/3 bg-white h-full mb-10">
-              <div class="box-border h-15 w-full p-4 border-1 bg-black text-white font-serif md:'Times New Roman' text-xl">
+              <div className="box-border h-15 w-full p-4 border-1 bg-black text-white font-serif md:'Times New Roman' text-xl">
                 Popular Posts
               </div>
               <div className="">
-                <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-                  <li class="p-5 sm:pb-4">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                      <div class="flex-shrink-0">
+                <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                  <li className="p-5 sm:pb-4">
+                    <div className="flex items-center space-x-4 rtl:space-x-reverse">
+                      <div className="flex-shrink-0">
                         <img
-                          class="w-14 h-14"
+                          className="w-14 h-14"
                           src="https://www.w3schools.com/w3images/avatar_smoke.jpg"
                           alt="Neil"
                         />
                       </div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-lg text-gray-900 truncate ">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-lg text-gray-900 truncate ">
                         Denim
                         </p>
-                        <p class="text-base text-gray-500 truncate dark:text-gray-400">
+                        <p className="text-base text-gray-500 truncate dark:text-gray-400">
                         Sed mattis nunc
                         </p>
                       </div>
                     </div>
                   </li>
-                  <li class="p-5 sm:py-4">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                      <div class="flex-shrink-0">
+                  <li className="p-5 sm:py-4">
+                    <div className="flex items-center space-x-4 rtl:space-x-reverse">
+                      <div className="flex-shrink-0">
                         <img
-                          class="w-14 h-14"
+                          className="w-14 h-14"
                           src="https://www.w3schools.com/w3images/bandmember.jpg"
                           alt="Neil "
                         />
                       </div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-lg text-gray-900 truncate ">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-lg text-gray-900 truncate ">
                         Sweaters
                         </p>
-                        <p class="text-base text-gray-500 truncate dark:text-gray-400">
+                        <p className="text-base text-gray-500 truncate dark:text-gray-400">
                         Praes tinci sed
 
                         </p>
                       </div>
                     </div>
                   </li>
-                  <li class="p-5 sm:py-4">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                      <div class="flex-shrink-0">
+                  <li className="p-5 sm:py-4">
+                    <div className="flex items-center space-x-4 rtl:space-x-reverse">
+                      <div className="flex-shrink-0">
                         <img
-                          class="w-14 h-14"
+                          className="w-14 h-14"
                           src="https://www.w3schools.com/w3images/workshop.jpg"
                           alt="Neil "
                         />
                       </div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-lg text-gray-900 truncate ">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-lg text-gray-900 truncate ">
                         Workshop
                         </p>
-                        <p class="text-base text-gray-500 truncate dark:text-gray-400">
+                        <p className="text-base text-gray-500 truncate dark:text-gray-400">
                         Ultricies congue
                         </p>
                       </div>
                     </div>
                   </li>
-                  <li class="p-5 sm:py-4">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                      <div class="flex-shrink-0">
+                  <li className="p-5 sm:py-4">
+                    <div className="flex items-center space-x-4 rtl:space-x-reverse">
+                      <div className="flex-shrink-0">
                         <img
-                          class="w-14 h-14"
+                          className="w-14 h-14"
                           src="https://www.w3schools.com/w3images/avatar_smoke.jpg"
                           alt="Neil "
                         />
                       </div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-lg text-gray-900 truncate ">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-lg text-gray-900 truncate ">
                         Trends
                         </p>
-                        <p class="text-base text-gray-500 truncate dark:text-gray-400">
+                        <p className="text-base text-gray-500 truncate dark:text-gray-400">
                         Lorem ipsum dipsum
 
                         </p>
@@ -211,7 +208,6 @@ const Home = ({ userMenuShow, onUserMenuClick }) => {
           </div>
         </div>
       </main>
-    </>
   );
 };
 
