@@ -1,52 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/treeview-sidebar.css";
-import TreeView from "../components/TreeView";
+import TreeView from "./components/TreeView";
+import ProductCard from "./components/ProductCard";
 const Shop = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    async function fetchData(limit = 12) {
+      fetch('https://fakestoreapi.com/products?limit=' + limit)
+        .then(res => {
+          res.json().then(data => {
+            setProducts(data);
+          })
+        })
+        .then(json => {
+          setProducts(null);
+        })
+    }
+    fetchData();
+  }, []);
+
+
   return (
     <div className="container m-auto mt-10">
-      <div className="grid-container grid gap-6 grid-cols-[20%_80%]">
+      <div className="grid-container grid gap-6 lg:grid-cols-[20%_80%] sm:grid-cols-1">
         <div>
           <span>Categories</span>
           <TreeView />
         </div>
-        <div className="grid grid-cols-4 gap-4">
-
-
-          <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
-            <a href="#">
-              <img className="p-8 rounded-t-lg" src="https://flowbite.com/docs/images/products/apple-watch.png" alt="product image" />
-            </a>
-            <div className="px-5 pb-5">
-              <a href="#">
-                <h5 className="text-xl font-semibold tracking-tight text-gray-900">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-              </a>
-              <div className="flex items-center mt-2.5 mb-5">
-                <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                  <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg className="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                </div>
-                <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900">$599</span>
-                <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-              </div>
+        <div>
+          <div className="grid-container grid gap-6 lg:grid-cols-[20%_20%_20%_40%] sm:grid-cols-[30%_30%_20%] mb-10">
+            <div className="">
+              <label for="sorting" class="block mb-2 text-sm font-medium text-gray-900">Sorting</label>
+              <select id="sorting" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5">
+                <option value="ASC" selected>ASC</option>
+                <option value="DESC">DESC</option>
+              </select>
+            </div>
+            <div className="">
+              <label for="showing" class="block mb-2 text-sm font-medium text-gray-900">Showing</label>
+              <select id="showing" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5">
+                <option value="8" selected>8</option>
+                <option value="12" selected>12</option>
+                <option value="16" selected>16</option>
+                <option value="all" selected>All</option>
+              </select>
+            </div>
+            <div className="md:mt-10 relative"> 
+              <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-sm text-sm px-2 py-2.5 absolute inset-x-0 bottom-0">Apply</button>
             </div>
           </div>
-
+          <div className="grid lg:grid-cols-4 sm:grid-cols-1 gap-4">
+            {products != null && products.map((product) => (
+              <ProductCard product={product} />
+            ))}
+          </div>
         </div>
 
       </div>

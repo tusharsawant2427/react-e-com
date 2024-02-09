@@ -2,7 +2,9 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import Product from "../pages/Product";
 import Shop from "../pages/Shop";
+
 import { storage_key } from "./Constant";
 
 export function user() {
@@ -27,7 +29,10 @@ export function currentPage(route, userInfo) {
     return <Contact />;
   } else if (route === "Shop") {
     return <Shop />;
-  } else if (route === "Login" && userInfo === null) {
+  } else if (route === "Product") {
+    return <Product />;
+  }
+  else if (route === "Login" && userInfo === null) {
     return <Login />;
   } else {
     return <Home />;

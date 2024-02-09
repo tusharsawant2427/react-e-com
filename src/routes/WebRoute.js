@@ -12,7 +12,7 @@ const WebRoute = () => {
       <Route path="/about" element={<Main route="About" />} />
       <Route path="/contact-us" element={<Main route="Contact-us" />} />
       <Route path="/shop" element={<Main route="Shop" />} />
-
+      <Route path="/products/:id" element={<Main route="Product" />} />
       <Route path="/login" element={userInfo === null ? <Main route="Login" /> : <Navigate to='/' />} />
     </Routes>
   );
